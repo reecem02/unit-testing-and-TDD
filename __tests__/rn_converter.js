@@ -18,8 +18,14 @@ test("tests number 5", function (){
     expect(result).toBe("V")
 })
 
-test("tests numbers in between 5 and 10", function (){
+test("tests numbers in between 5 and 9", function (){
     const rn = "6"
     const result = rn_converter(rn)
-    excect(result).toBe("VI")
+    expect(result).toBe("VI")
+})
+
+test("tests numbers in between 5 and 9 test 2", function (){
+    const rn = "8"
+    const result = rn_converter(rn)
+    expect(result).toBe("VIII")
 })

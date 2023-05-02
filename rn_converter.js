@@ -33,6 +33,10 @@ module.exports = function rn_converter(input) {
     if(input == 5){
         return "V"
     }
+    
+    if(input > 5 && input < 9){
+        return "V" + "I".repeat(input - 5)
+    }
 }
 //     const checks = {
 //         noInvalid: _isonlydigits(input)
