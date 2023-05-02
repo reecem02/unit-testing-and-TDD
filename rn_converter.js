@@ -24,7 +24,11 @@ module.exports = function rn_converter(input) {
      */
 
     if(!input || typeof input !== "string") {
-        return { pass: false }
+        return false
+    }
+
+    if(input < 1 || input > 3999){
+        return false
     }
     
     //what is returned

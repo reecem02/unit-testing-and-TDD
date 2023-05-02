@@ -36,3 +36,15 @@ test("tests stacking 10 and 50 together", function (){
     const result = rn_converter(rn)
     expect(result).toBe("LXVI")
 })
+
+test("checks edge case of 4000", function (){
+    const rn = "4000"
+    const result = rn_converter(rn)
+    expect(result).toBe(false)
+})
+
+test("checks edge case of 0", function (){
+    const rn = "0"
+    const result = rn_converter(rn)
+    expect(result).toBe(false)
+})
