@@ -35,3 +35,9 @@ test("tests the bigger numbers to show rn 10 (X)", function (){
     const result = rn_converter(rn)
     expect(result).toBe("XIIII")
 })
+
+test("tests stacking 10 and 50 together", function (){
+    const rn = "66"
+    const result = rn_converter(rn)
+    expect(result).toBe("LXVI")
+})
