@@ -29,3 +29,9 @@ test("tests numbers in between 5 and 9 test 2", function (){
     const result = rn_converter(rn)
     expect(result).toBe("VIII")
 })
+
+test("tests the bigger numbers to show rn 10 (X)", function (){
+    const rn = "14"
+    const result = rn_converter(rn)
+    expect(result).toBe("XIIII")
+})
