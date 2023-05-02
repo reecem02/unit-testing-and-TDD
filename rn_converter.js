@@ -29,6 +29,10 @@ module.exports = function rn_converter(input) {
     if(input < 5 && input >= 0){
         return "I".repeat(input);
     }
+
+    if(input == 5){
+        return "V"
+    }
 }
 //     const checks = {
 //         noInvalid: _isonlydigits(input)
