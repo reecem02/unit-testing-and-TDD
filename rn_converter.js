@@ -26,33 +26,20 @@ module.exports = function rn_converter(input) {
         return { pass: false }
     }
 
-    /*
-     * Perform individual verification checks.
-     */
-    const checks = {
-        length: _containsAtLeast8Chars(password),
-        lowercase: _containsOneLowercase(password),
-        uppercase: _containsOneUppercase(password),
-        digit: _containsOneDigit(password),
-        symbol: _containsOneSymbol(password),
-        noInvalid: _containsNoInvalidChars(password)
+    if(input < 5 && input >= 0){
+        return "I".repeat(input);
     }
-
-    /*
-     * Determine overall verification result based on individual checks.
-     */
-    const pass = (
-        checks.length &&
-        checks.lowercase &&
-        checks.uppercase &&
-        checks.digit &&
-        checks.symbol &&
-        checks.noInvalid
-    )
-
-    return { ...checks, pass: pass }
 }
+//     const checks = {
+//         noInvalid: _isonlydigits(input)
+//     }
 
-function _containsAtLeast8Chars(password) {
-    return password && password.length >= 8
-}
+//     const pass = (
+//         checks.noInvalid
+//     )
+// }
+
+// function _isonlydigits(input) {
+//     const regex = /[0-9]/
+//     return regex.test(input)
+// }
