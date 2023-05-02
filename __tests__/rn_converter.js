@@ -17,3 +17,9 @@ test("tests number 5", function (){
     const result = rn_converter(rn)
     expect(result).toBe("V")
 })
+
+test("tests numbers in between 5 and 10", function (){
+    const rn = "6"
+    const result = rn_converter(rn)
+    excect(result).toBe("VI")
+})
