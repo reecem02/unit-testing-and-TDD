@@ -22,21 +22,37 @@ module.exports = function rn_converter(input) {
     /*
      * Short-circuit checks if input is not a string
      */
+
     if(!input || typeof input !== "string") {
         return { pass: false }
     }
-
-    if(input < 5 && input >= 0){
-        return "I".repeat(input);
-    }
-
-    if(input == 5){
-        return "V"
-    }
     
-    if(input > 5 && input < 9){
-        return "V" + "I".repeat(input - 5)
+    //what is returned
+    answer = ""
+    //array holding roman numerals
+    let rn = ['M', 'C', 'L', 'X', 'V', 'I']
+    //corresponding array holding roman numeral values
+    let num = [1000, 100, 50, 10, 5, 1]
+
+    for(i = 0; i < rn.length; i++){
+        while(input - num[i] >= 0){
+            //adds corresponding rn to answer string
+            answer = answer + rn[i];
+            input = input - num[i]
+        }
     }
+    return answer
+    // if(input < 5 && input >= 0){
+    //     return "I".repeat(input);
+    // }
+
+    // if(input == 5){
+    //     return "V"
+    // }
+    
+    // if(input > 5 && input < 9){
+    //     return "V" + "I".repeat(input - 5)
+    // }
 }
 //     const checks = {
 //         noInvalid: _isonlydigits(input)
